@@ -7,4 +7,6 @@ publish: # выполняет отладку публикации пакета
 	npm publish --dry-run
 lint: # запускает eslint
 	npx eslint .
+brain-even: # запускает игру "Проверкаа на четность"
+	node bin/brain-even.js
 	
