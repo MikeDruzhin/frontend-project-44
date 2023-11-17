@@ -9,4 +9,6 @@ lint: # запускает eslint
 	npx eslint .
 brain-even: # запускает игру "Проверкаа на четность"
 	node bin/brain-even.js
+brain-calc: # запускает игру "Калькулятор"
+	node bin/brain-calc.js
 	
