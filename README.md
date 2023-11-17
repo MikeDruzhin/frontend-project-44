@@ -3,3 +3,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a5f6745d6a1d6a86fce5/maintainability)](https://codeclimate.com/github/MikeDruzhin/frontend-project-44/maintainability)
 
 https://asciinema.org/a/zN8LTfLKw53eXmJHqRtfNPyNQ
+
+https://asciinema.org/a/Rv3mI89Yir3701i6RU2ccdxyh
