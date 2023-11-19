@@ -11,4 +11,6 @@ brain-even: # запускает игру "Проверкаа на четнос�
 	node bin/brain-even.js
 brain-calc: # запускает игру "Калькулятор"
 	node bin/brain-calc.js
+brain-gcd: # запускает игру "НОД"
+	node bin/brain-gcd.js
 	
