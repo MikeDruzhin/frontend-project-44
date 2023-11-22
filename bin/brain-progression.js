@@ -32,7 +32,7 @@ for (let i = 0; i < 3; i += 1) {
   const range = getRandomRange(5, 10);
   const indexOfEmpty = getRandomRange(0, range);
   const arr = arrGen(num, relation, range, indexOfEmpty);
-  res = arr[indexOfEmpty];
+  res = arr[indexOfEmpty].toString();
   arr[indexOfEmpty] = '..';
   const q = arr.join(' ');
   const question = `${q}`;

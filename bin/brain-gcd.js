@@ -23,7 +23,7 @@ for (let i = 0; i < 3; i += 1) {
   const firstNum = Math.abs(getRandomInt());
   const secondNum = Math.abs(getRandomInt());
   const question = `${firstNum} ${secondNum}`;
-  res = nod(firstNum, secondNum);
+  res = nod(firstNum, secondNum).toString();
   if (basicFunc2(question, res) !== res) {
     break;
   }

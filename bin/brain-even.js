@@ -1,25 +1,30 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { greeting, name } from '../src/cli.js';
+import {
+  getRandomInt, intro, basicFunc2, congrats,
+} from '../src/index.js';
 
-greeting();
-
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-const numbers = [15, 6, 7];
-let points = 0;
-for (let i = 0; i < numbers.length; i += 1) {
-  console.log(`Question: ${numbers[i]}!`);
-  const answer = readlineSync.question('Your answer: ');
-  if (numbers[i] % 2 !== 0 && answer === 'no') {
-    console.log('Correct!');
-  } else if (numbers[i] % 2 === 0 && answer === 'yes') {
-    console.log('Correct!');
+function IsEven(a) {
+  let answer = '';
+  if (a % 2 === 0) {
+    answer = 'yes';
   } else {
-    console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}`);
+    answer = 'no';
+  }
+  return answer;
+}
+
+let res = 0;
+let points = 0;
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+intro(description);
+for (let i = 0; i < 3; i += 1) {
+  const firstNum = Math.abs(getRandomInt());
+  const question = `${firstNum}`;
+  res = IsEven(firstNum);
+  if (basicFunc2(question, res) !== res) {
     break;
   }
   points += 1;
 }
-if (points === numbers.length) {
-  console.log(`Congratulations, ${name}!`);
-}
+congrats(points);
