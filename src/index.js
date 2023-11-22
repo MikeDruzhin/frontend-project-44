@@ -13,12 +13,12 @@ function intro(description) {
 function basicFunc2(question, answer) {
   console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
-  if (Number(userAnswer) === answer) {
+  if (userAnswer === answer) {
     console.log('Correct!');
   } else {
     console.log(`'${userAnswer}'  is wrong answer ;(. Correct answer was '${answer}'`);
   }
-  return Number(userAnswer);
+  return userAnswer;
 }
 
 function congrats(num) {
