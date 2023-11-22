@@ -15,4 +15,6 @@ brain-gcd: # запускает игру "НОД"
 	node bin/brain-gcd.js
 brain-progression: # запускает игру "Арифметическая прогрессия"
 	node bin/brain-progression.js
+brain-prime: # запускает игру "Простое ли число"
+	node bin/brain-prime.js
 	
