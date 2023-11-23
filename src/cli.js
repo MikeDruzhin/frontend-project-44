@@ -4,6 +4,8 @@ export const welcome = console.log('Welcome to the Brain Games!');
 export const name = readlineSync.question('May I have your name? ');
 export const hi = console.log(`Hello, ${name}!`);
 
-export function greeting() {
+function greeting() {
   return `${welcome}\n${name}\n${hi}`;
 }
+
+export default greeting;
