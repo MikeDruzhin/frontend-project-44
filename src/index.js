@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { greeting, name } from './cli.js';
+import {
+  greeting, name,
+} from './cli.js';
 
 function getRandomInt() {
   return Math.floor(Math.random() * (100 - 1)) + 1;
