@@ -8,4 +8,4 @@ function greeting() {
   return `${welcome}\n${name}\n${hi}`;
 }
 
-export default greeting;
+export { greeting };
