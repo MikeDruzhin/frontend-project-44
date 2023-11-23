@@ -30,7 +30,7 @@ function calc() {
     const firstNum = getRandomInt();
     const secondNum = getRandomInt();
     const operator = arrayRandElement(operations);
-    const question = `${firstNum}${operator}${secondNum}`;
+    const question = `${firstNum} ${operator} ${secondNum}`;
     res = doCalc(firstNum, secondNum, operator).toString();
     if (basicFunc2(question, res) !== res) {
       break;
