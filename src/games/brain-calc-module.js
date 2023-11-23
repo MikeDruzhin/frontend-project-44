@@ -3,7 +3,7 @@ import {
 } from '../index.js';
 
 import {
-  getRandomInt, arrayRandElement, 
+  getRandomInt, arrayRandElement,
 } from '../utils/get-random.js';
 
 function doCalc(first, second, sign) {
@@ -41,4 +41,3 @@ function calc() {
 }
 
 export default calc;
-

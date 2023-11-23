@@ -3,7 +3,7 @@ import {
 } from '../index.js';
 
 import {
-  getRandomInt, getRandomRange, 
+  getRandomInt, getRandomRange,
 } from '../utils/get-random.js';
 
 function arrGen(start, diff, range) {

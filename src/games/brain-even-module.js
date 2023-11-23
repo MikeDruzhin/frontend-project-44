@@ -3,7 +3,7 @@ import {
 } from '../index.js';
 
 import {
-  getRandomInt, 
+  getRandomInt,
 } from '../utils/get-random.js';
 
 function IsEven(a) {
