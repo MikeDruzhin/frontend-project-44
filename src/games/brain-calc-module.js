@@ -1,12 +1,10 @@
-import {
-  basicFunc2, intro, congrats,
-} from '../index.js';
+import doGameScript from '../index.js';
 
 import {
   getRandomInt, arrayRandElement,
 } from '../utils/get-random.js';
 
-function doCalc(first, second, sign) {
+function calc(first, second, sign) {
   let res = 0;
   if (sign === '+') {
     res = first + second;
@@ -18,26 +16,19 @@ function doCalc(first, second, sign) {
   return res;
 }
 
-function calc() {
+function generateData() {
   const operations = ['+', '-', '*'];
-  let res = 0;
-  let points = 0;
-  const description = 'What is the result of the expression?';
-
-  intro(description);
-
-  for (let i = 0; i < 3; i += 1) {
-    const firstNum = getRandomInt();
-    const secondNum = getRandomInt();
-    const operator = arrayRandElement(operations);
-    const question = `${firstNum} ${operator} ${secondNum}`;
-    res = doCalc(firstNum, secondNum, operator).toString();
-    if (basicFunc2(question, res) !== res) {
-      break;
-    }
-    points += 1;
-  }
-  congrats(points);
+  const firstNum = getRandomInt();
+  const secondNum = getRandomInt();
+  const operator = arrayRandElement(operations);
+  const question = `${firstNum} ${operator} ${secondNum}`;
+  const res = calc(firstNum, secondNum, operator).toString();
+  return [question, res];
 }
 
-export default calc;
+function doCalc() {
+  const description = 'What is the result of the expression?';
+  doGameScript(generateData, description);
+}
+
+export default doCalc;

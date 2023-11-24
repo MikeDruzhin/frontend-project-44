@@ -1,6 +1,4 @@
-import {
-  basicFunc2, intro, congrats,
-} from '../index.js';
+import doGameScript from '../index.js';
 
 import {
   getRandomInt,
@@ -22,22 +20,16 @@ function divider(a) {
   return answer;
 }
 
-function prime() {
-  let res = 0;
-  let points = 0;
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-  intro(description);
-  for (let i = 0; i < 3; i += 1) {
-    const firstNum = Math.abs(getRandomInt());
-    const question = `${firstNum}`;
-    res = divider(firstNum);
-    if (basicFunc2(question, res) !== res) {
-      break;
-    }
-    points += 1;
-  }
-  congrats(points);
+function generateData() {
+  const firstNum = Math.abs(getRandomInt());
+  const question = `${firstNum}`;
+  const res = divider(firstNum);
+  return [question, res];
 }
 
-export default prime;
+function isPrime() {
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  doGameScript(generateData, description);
+}
+
+export default isPrime;

@@ -1,6 +1,4 @@
-import {
-  basicFunc2, intro, congrats,
-} from '../index.js';
+import doGameScript from '../index.js';
 
 import {
   getRandomInt,
@@ -18,23 +16,17 @@ function nod(a, b) {
   return res;
 }
 
-function gcd() {
-  let res = 0;
-  let points = 0;
-  const description = 'Find the greatest common divisor of given numbers.';
-
-  intro(description);
-  for (let i = 0; i < 3; i += 1) {
-    const firstNum = Math.abs(getRandomInt());
-    const secondNum = Math.abs(getRandomInt());
-    const question = `${firstNum} ${secondNum}`;
-    res = nod(firstNum, secondNum).toString();
-    if (basicFunc2(question, res) !== res) {
-      break;
-    }
-    points += 1;
-  }
-  congrats(points);
+function generateData() {
+  const firstNum = Math.abs(getRandomInt());
+  const secondNum = Math.abs(getRandomInt());
+  const question = `${firstNum} ${secondNum}`;
+  const res = nod(firstNum, secondNum).toString();
+  return [question, res];
 }
 
-export default gcd;
+function findGcd() {
+  const description = 'Find the greatest common divisor of given numbers.';
+  doGameScript(generateData, description);
+}
+
+export default findGcd;
