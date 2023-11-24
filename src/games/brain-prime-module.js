@@ -12,7 +12,7 @@ function divider(a) {
       res += 1;
     }
   }
-  if (res < 3) {
+  if (res < 3 && res > 1) {
     answer = 'yes';
   } else {
     answer = 'no';
