@@ -1,13 +1,11 @@
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
-
 const roundCount = 3;
 function doGameScript(getGameData, description) {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
   console.log(description);
-  let points = 0;
   for (let i = 0; i < roundCount; i += 1) {
     const [question, answer] = getGameData();
     console.log(`Question: ${question}`);
@@ -16,14 +14,10 @@ function doGameScript(getGameData, description) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}'  is wrong answer ;(. Correct answer was '${answer}'`);
-      console.log(`Let's try again, ${name}!`);
-      break;
+      return `Let's try again, ${name}!`;
     }
-    points += 1;
   }
-  if (points === roundCount) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  return console.log(`Congratulations, ${name}!`);
 }
 
 export default doGameScript;

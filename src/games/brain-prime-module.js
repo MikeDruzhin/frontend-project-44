@@ -4,32 +4,26 @@ import {
   getRandomInt,
 } from '../utils/get-random.js';
 
-function divider(a) {
+const isNumberPrime = (number) => {
   let res = 0;
-  let answer = '';
-  for (let i = 1; i <= a; i += 1) {
-    if (a % i === 0) {
+  for (let i = 1; i <= number; i += 1) {
+    if (number % i === 0) {
       res += 1;
     }
   }
-  if (res < 3 && res > 1) {
-    answer = 'yes';
-  } else {
-    answer = 'no';
-  }
-  return answer;
-}
+  return (res < 3 && res > 1) ? 'yes' : 'no';
+};
 
-function generateData() {
+const generateData = () => {
   const firstNum = Math.abs(getRandomInt());
   const question = `${firstNum}`;
-  const res = divider(firstNum);
+  const res = isNumberPrime(firstNum);
   return [question, res];
-}
+};
 
-function isPrime() {
+const isPrime = () => {
   const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   doGameScript(generateData, description);
-}
+};
 
 export default isPrime;

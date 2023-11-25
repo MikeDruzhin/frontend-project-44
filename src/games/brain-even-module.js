@@ -4,26 +4,17 @@ import {
   getRandomInt,
 } from '../utils/get-random.js';
 
-function IsEvenNumber(a) {
-  let answer = '';
-  if (a % 2 === 0) {
-    answer = 'yes';
-  } else {
-    answer = 'no';
-  }
-  return answer;
-}
+const isEvenNumber = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
-function generateData() {
+const generateData = () => {
   const firstNum = Math.abs(getRandomInt());
-  const question = `${firstNum}`;
-  const res = IsEvenNumber(firstNum);
-  return [question, res];
-}
+  const res = isEvenNumber(firstNum);
+  return [`${firstNum}`, res];
+};
 
-function isEven() {
+const isEven = () => {
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';
   doGameScript(generateData, description);
-}
+};
 
 export default isEven;

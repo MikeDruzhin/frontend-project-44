@@ -4,31 +4,38 @@ import {
   getRandomInt, arrayRandElement,
 } from '../utils/get-random.js';
 
-function calc(first, second, sign) {
+const calculateValues = (firstValue, secondValue, sign) => {
   let res = 0;
-  if (sign === '+') {
-    res = first + second;
-  } else if (sign === '-') {
-    res = first - second;
-  } else {
-    res = first * second;
+  switch (sign) {
+    case '+':
+      res = firstValue + secondValue;
+      break;
+    case '-':
+      res = firstValue - secondValue;
+      break;
+    case '*':
+      res = firstValue * secondValue;
+      break;
+    default:
+      res = undefined;
+      console.log('Please, enter correct sign!');
   }
   return res;
-}
+};
 
-function generateData() {
+const generateData = () => {
   const operations = ['+', '-', '*'];
   const firstNum = getRandomInt();
   const secondNum = getRandomInt();
   const operator = arrayRandElement(operations);
   const question = `${firstNum} ${operator} ${secondNum}`;
-  const res = calc(firstNum, secondNum, operator).toString();
+  const res = calculateValues(firstNum, secondNum, operator).toString();
   return [question, res];
-}
+};
 
-function doCalc() {
+const doCalc = () => {
   const description = 'What is the result of the expression?';
   doGameScript(generateData, description);
-}
+};
 
 export default doCalc;
