@@ -14,7 +14,7 @@ function doGameScript(getGameData, description) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}'  is wrong answer ;(. Correct answer was '${answer}'`);
-      return `Let's try again, ${name}!`;
+      return console.log(`Let's try again, ${name}!`);
     }
   }
   return console.log(`Congratulations, ${name}!`);
