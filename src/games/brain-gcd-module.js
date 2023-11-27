@@ -4,15 +4,14 @@ import {
   getRandomInt,
 } from '../utils/get-random.js';
 
+// eslint-disable-next-line consistent-return
 const findGreatestDivisor = (a, b) => {
-  let res = 0;
   const max = a > b ? a : b;
-  for (let i = 1; i <= max; i += 1) {
+  for (let i = max; i >= 1; i -= 1) {
     if (a % i === 0 && b % i === 0) {
-      res = i; /* если  не накапливать, то всегда будет возвращаться 1 */
+      return i;
     }
   }
-  return res;
 };
 
 const generateData = () => {

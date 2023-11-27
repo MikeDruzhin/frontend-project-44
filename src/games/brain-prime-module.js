@@ -11,13 +11,13 @@ const isNumberPrime = (number) => {
       res += 1;
     }
   }
-  return (res < 3 && res > 1) ? 'yes' : 'no';
+  return (res < 3 && res > 1);
 };
 
 const generateData = () => {
   const firstNum = Math.abs(getRandomInt());
   const question = `${firstNum}`;
-  const res = isNumberPrime(firstNum);
+  const res = isNumberPrime(firstNum) ? 'yes' : 'no';
   return [question, res];
 };
 

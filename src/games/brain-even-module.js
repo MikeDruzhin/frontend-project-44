@@ -4,11 +4,11 @@ import {
   getRandomInt,
 } from '../utils/get-random.js';
 
-const isEvenNumber = (number) => (number % 2 === 0 ? 'yes' : 'no');
+const isEvenNumber = (number) => (number % 2 === 0);
 
 const generateData = () => {
   const firstNum = Math.abs(getRandomInt());
-  const res = isEvenNumber(firstNum);
+  const res = isEvenNumber(firstNum) ? 'yes' : 'no';
   return [`${firstNum}`, res];
 };
 

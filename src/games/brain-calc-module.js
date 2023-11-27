@@ -5,22 +5,16 @@ import {
 } from '../utils/get-random.js';
 
 const calculateValues = (firstValue, secondValue, sign) => {
-  let res = 0;
   switch (sign) {
     case '+':
-      res = firstValue + secondValue;
-      break;
+      return firstValue + secondValue;
     case '-':
-      res = firstValue - secondValue;
-      break;
+      return firstValue - secondValue;
     case '*':
-      res = firstValue * secondValue;
-      break;
+      return firstValue * secondValue;
     default:
-      res = undefined;
-      console.log('Please, enter correct sign!');
+      throw new Error(`Unknown sign: '${sign}'!`);
   }
-  return res;
 };
 
 const generateData = () => {

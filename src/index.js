@@ -14,10 +14,11 @@ function doGameScript(getGameData, description) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}'  is wrong answer ;(. Correct answer was '${answer}'`);
-      return console.log(`Let's try again, ${name}!`);
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
   }
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
 }
 
 export default doGameScript;
